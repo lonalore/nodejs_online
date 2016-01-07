@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e107Plugin name="Node.js Online" lan="LAN_PLUGIN_NODEJS_ONLINE_NAME" version="1.0" date="2016-01-07" compatibility="2.0" installRequired="true">
+    <author name="lonalore" url="http://lonalore.hu"/>
+    <summary lan="LAN_PLUGIN_NODEJS_ONLINE_SUMM">Node.js Online List</summary>
+    <description lan="LAN_PLUGIN_NODEJS_ONLINE_DESC">List online users in a menu.</description>
+    <keywords>
+        <word>nodejs</word>
+        <word>online</word>
+        <word>users</word>
+    </keywords>
+    <category>tools</category>
+    <copyright></copyright>
+    <adminLinks>
+        <link url="admin_config.php" description="" icon="images/icon_32.png" iconSmall="images/icon_16.png" primary="true">LAN_CONFIGURE</link>
+    </adminLinks>
+    <dependencies>
+        <plugin name='nodejs' min_version='1.0' />
+    </dependencies>
+</e107Plugin>
