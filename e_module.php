@@ -25,20 +25,13 @@ $event->register('nodejs-user-set-offline', 'nodejs_online_event_callback');
 function nodejs_online_event_callback()
 {
 	e107_require_once(e_PLUGIN . 'nodejs/nodejs.main.php');
+	e107_require_once(e_PLUGIN . 'nodejs_online/includes/nodejs_online.php');
 
 	$template = e107::getTemplate('nodejs_online');
 	$sc = e107::getScBatch('nodejs_online', true);
 	$tp = e107::getParser();
-	$listuserson = e107::getOnline()->userList();
 
-	$users = array();
-	foreach($listuserson as $uinfo => $row)
-	{
-		if(!isset($users[$row['user_id']]))
-		{
-			$users[$row['user_id']] = $row;
-		}
-	}
+	$users = nodejs_online_get_online_users();
 
 	$message = (object) array(
 		'broadcast' => true,

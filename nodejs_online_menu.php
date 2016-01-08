@@ -53,16 +53,10 @@ class nodejs_online_menu
 		$template = e107::getTemplate('nodejs_online');
 		$sc = e107::getScBatch('nodejs_online', true);
 		$tp = e107::getParser();
-		$listuserson = e107::getOnline()->userList();
 
-		$users = array();
-		foreach($listuserson as $uinfo => $row)
-		{
-			if(!isset($users[$row['user_id']]))
-			{
-				$users[$row['user_id']] = $row;
-			}
-		}
+		e107_require_once(e_PLUGIN . 'nodejs_online/includes/nodejs_online.php');
+
+		$users = nodejs_online_get_online_users();
 
 		$sc->setVars(array(
 			'count' => count($users),
