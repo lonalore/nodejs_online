@@ -45,7 +45,7 @@ class nodejs_online_e_header
 	function include_components()
 	{
 		e107::css('nodejs_online', 'css/nodejs_online.css');
-		e107::js('nodejs_online', 'js/nodejs_online.js', 'jquery', 5);
+		e107::js('footer', '{e_PLUGIN}nodejs_online/js/nodejs_online.js', 'jquery', 5);
 	}
 }
 
